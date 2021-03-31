@@ -155,3 +155,27 @@
 
 // console.log(fun(n, a(), b(m)));
 
+// Написать функцию, которая принимает 3 аргумента(каждый аргумент - 1 слово) и возвращает строку с этими 3 словами, расположенными в алфавитном порядке.
+let word = " ";
+let a = "Вася";
+let b = "Анатой";
+let c = "Ярослав";
+let str = function (word1, word2, word3) {
+  if (word1 > word2 && word2 > word3) {
+    return (word = word3 + " " + word2 + " " + word1);
+  } else if (word2 > word3 && word3 > word1) {
+    return (word = word1 + " " + word3 + " " + word2);
+  } else if (word2 > word1 && word1 > word3) {
+    return (word = word3 + " " + word1 + " " + word2);
+  } else if (word2 > word3 && word3 > word1) {
+    return (word = word1 + " " + word3 + " " + word2);
+  } else if (word3 > word1 && word1 > word2) {
+    return (word = word2 + " " + word1 + " " + word3);
+  } else if (word3 > word2 && word2 > word1) {
+    return (word = word1 + " " + word2 + " " + word3);
+  } else {
+    return console.log("Ошибка");
+  }
+};
+
+console.log(str(a, b, c));
