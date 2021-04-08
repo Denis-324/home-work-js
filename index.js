@@ -1,181 +1,131 @@
-// Сделайте функцию, которая возвращает квадрат числа. Число передается параметром.
-// let result
-// let square = function(a){
-//    result = a*a;
-//    return result
+// 1. Удаление указанного количества символов из строки
+// Напишите функцию delete_characters(str, length), которая возвращает подстроку, состоящую из указанного количества символов.
+
+// let str = "Каждый охотник желает знать";
+// let length = 5;
+// function delete_characters(str, length) {
+//   return str.slice(0, length + 1);
 // }
-// square(4)
-// console.log(result);
+// console.log(delete_characters(str, length));
 
-// Сделайте функцию, которая возвращает сумму двух чисел.
+// 2. Вставить тире между словами строки
+// Напишите функцию insert_dash(str), которая принимает строку str в качестве аргумента и вставляет тире (-) между словами. При этом все символы строки необходимо перевести в верхний регистр.
 
-// let square = function(a){
-//    let result;
-//    result = a+a;
-//    return result;
-// }
-// console.log(square(4));
-
-// Сделайте функцию, которая отнимает от первого числа второе и делит на третье.
-// function square (a, b, c){
-//    return (a-b)/c
-// }
-// console.log(square(10, 2, 4));
-
-// Сделайте функцию, которая принимает параметром число от 1 до 7, а возвращает день недели на русском языке.
-
-// function num (){
-//   return +prompt('Введите число от 1 до 7')
-// }
-
-// let day = function(numWeek=num ()){
-//    let dayWeek;
-//    // numWeek = +prompt('Введите число от 1 до 7');
-//    if (numWeek===1){
-//       dayWeek = alert('Понедельник')
-//    } else if (numWeek===2) {
-//       dayWeek = alert('Вторник')
-//    } else if (numWeek===3) {
-//       dayWeek = alert('Среда')
-//    } else if (numWeek===4) {
-//       dayWeek = alert('Четверг')
-//    } else if (numWeek===5) {
-//       dayWeek = alert('Четверг')
-//    } else if (numWeek===6) {
-//       dayWeek = alert('Четверг')
-//    } else if (numWeek===7) {
-//       dayWeek = alert('Четверг')
-//    } else {
-//       dayWeek = alert('Введите число от 1 до 7')
-//    }
-//     return dayWeek;
-// }
-// day(num())
-
-// Сделайте функцию, которая параметрами принимает 2 числа. Если их сумма
-// больше 10 - пусть вернет true, а если нет то - false.
-
-// let numOne = function(){
-//    return +prompt(' Введите первое число')
-// }
-
-// let numTwo = function(){
-//    return +prompt(' Введите второе число число')
-// }
-
-// let result = function (one, two){
-//    let sum = one+two
-//    if (sum > 10){
-//       alert('true')
-//    }else{
-//       alert('false')
-//    }
-// }
-// result(numOne(), numTwo())
-
-// Сделайте функцию, которая параметром принимает число и проверяет - отрицательное оно или нет. Если отрицательное - пусть функция вернет true, а если нет - false
-// let numOne = function(){
-//    return +prompt(' Введите число')
-// }
-// let result = function (one){
-//    if (one < 0){
-//       alert('true')
-//    }else{
-//       alert('false')
-//    }
-// }
-// result(numOne())
-
-// Сделайте функцию isNumberInRange, которая параметром принимает число и проверяет, что оно больше нуля и меньше 10. Если это так - пусть функция возвращает true, если не так - fals
-// let isNumberInRange = function(a){
-//       if(a > 0 && a < 10){
-//          return alert('true')
-//       }else{
-//          return alert('false')
-//       }
-//    }
-// isNumberInRange(11)
-
-// Создайте функцию rgb(), которая будет принимать три числовых аргумента и возвращать строку вида «rgb(23,100,134)». Если аргументы не заданы, считать их равными нулю. Не проверять переменные на тип данных
-// let rgb = function(r=0, g=0, b=0){
-//    let str = alert(`rgb {${r}, ${g}, ${b}}`)
-//    return str
-// }
-
-// rgb (10, 20, 30)
-
-// Написать функцию mult(num1, num2 , num3) принимающую 3 числа. Функцию перемножает num1 и num2 столько раз, сколько указано в третьем аргументе num3. Значения num1 и num2 по умолчанию 1,  num3 по умолчанию 2.
-
-// let mult = function(num1=1, num2=1, num3=2){
-//    for(let i = 1; i <= num3; i++ ){
-//      console.log(i, num1*num2)
-//    }
-// }
-// mult(3, 3, 4)
-
-// Сделайте функцию isEven() (even - это четный), которая параметром принимает целое число и проверяет: четное оно или нет. Если четное - пусть функция возвращает true, если нечетное - false.
-
-// let num = function(){
-//    return +prompt(' Введите число')
-// }
-// let isEven = function (one){
-//    if (one%2=== 0){
-//       alert('true')
-//    }else{
-//       alert('false')
-//    }
-// }
-// isEven(num())
-
-// Написать функцию, которая принимает в себя три параметра - число и две функции. Первая переданная функция  возвращает возведенное в квадрат переданное число и будет вызываться, если число четное. Вторая переданная коллбэк-функция будет вызываться с переданным в нее числом , если число нечетное, и будет возвращать число, увеличенное на 1.
-
-// Эту задачу не получилось сделать, ошибки...
-
-// let fun = function (num, cb1, cb2) {
-//   if ((num * num) % 2 === 0) {
-//     cb1();
-//   } else if (m % 2 !== 0) {
-//     cb2();
+// let str = "HTML JavaScript PHP";
+// function insert_dash(str) {
+//   let find = " ";
+//   let replace = "-";
+//   let pos = 0;
+//   while (str.includes(find)) {
+//     pos = str.indexOf(find, pos);
+//     str = (
+//       str.slice(0, pos) +
+//       replace +
+//       str.slice(pos + find.length)
+//     ).toUpperCase();
 //   }
+//   return str;
+// }
+
+// console.log(insert_dash(str));
+
+// 3. Сделать первую букву строки прописной
+// Напишите функцию, которая принимает строку в качестве аргумента и преобразует регистр первого символа строки из нижнего регистра в верхний.
+
+// let str = "string not starting with capital";
+// function cursive_letter(str) {
+//   return str[0].toUpperCase() + str.slice(1);
+// }
+// console.log(cursive_letter(str));
+
+// 5. Смена регистра символов строки
+// Напишите функцию change_register(str), которая принимает в качестве аргумента строку и и заменяет регистр каждого символа на противоположный. Например, если вводится «КаЖдЫй ОхОтНиК», то на выходе должно быть «кАжДыЙ оХоТнИк».
+
+// let str = "КаЖдЫй ОхОтНиК жЕлАеТ зНаТь";
+
+// function change_register(str) {
+//   let str2 = "";
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] === str[i].toLowerCase()) {
+//       str2 += str[i].toUpperCase();
+//     } else {
+//       str2 += str[i].toLowerCase();
+//     }
+//   }
+//   return str2;
+// }
+// console.log(change_register(str));
+
+// 23. Найти слово в строке
+// Напишите функцию findWord(word, str), которая проверяет, существует ли в строке str слова word.
+
+// let str = "abc def ghi jkl mno pqr stu";
+// let word = "abc";
+
+// function findWord(word, str) {
+//   if (str.includes(word)) {
+//     return `слово есть в строке ${str}`;
+//   } else {
+//     return `слова нет в строке ${str}`;
+//   }
+// }
+// console.log(findWord(word, str));
+
+// 21. Удалить лишние слова из строки
+// Напишите функцию cutString(str, n), которая удаляет лишние слова из строки str, оставив в ней n слов.
+
+// let str = "Сила тяжести приложена к центру масс тела";
+
+// function cutString(str, n) {
+//   n = "Сила";
+//   if (str.includes(n)) {
+//     return n;
+//   } else {
+//     return `слова ${n} нет в строке`;
+//   }
+// }
+// console.log(cutString(str));
+
+// 12. Повторить строку n раз
+// Напишите функцию repeatStr(str, n), которая вовращает строку повторяемую определённое количество раз.
+// let str = "Привет";
+// let str2 = " ";
+// let n = 3;
+// function repeatStr(str, n) {
+//   while (n > 0) {
+//     str2 += str;
+//     n--;
+//   }
+//   return str2;
+// }
+
+// console.log(repeatStr(str, n));
+
+// 8. Сравнение строк без учёта регистра
+// Напишите функцию comparison(str1, str2), которая сравнивает строки без учёта регистра символов.
+// function comparison(str1, str2) {
+//   let result = str1.toUpperCase() === str2.toUpperCase();
+//   return result;
+// }
+// console.log(comparison("Ваня", "Ваня"));
+
+// 25. Реализовать объект
+
+// Создать объект с начальным полем title. Добавить поле с ключом description начальным значением строкой. Добавить метод addField, который при вызове добавляет новое поле в объект с переданным именем и значением addField(fieldName, value), добавить метод editField(fieldName, value), который меняет указанное свойство объекта. Добавить метод удаление свойства deleteField(fieldName), удаляющий указанное поле. Добавить и изменить поля с помощью этих методов.
+
+// let n = {
+//   title: "title",
 // };
 
-// let n = 2;
-// let a = function () {
-//   let v;
-//   v = n * n;
-//   return v;
+// n.addField = (fieldName, value) => {
+//   return (n.fieldName = "value");
+// };
+// n.ditField = (fieldName, value) => {
+//   return (n.fieldName = "value");
+// };
+// n.deleteField = (fieldName) => {
+//   return delete n.fieldName;
 // };
 
-// let m = 7;
-// let b = function (x) {
-//   let r;
-//   r = x + 1;
-//   return r;
-// };
-
-// console.log(fun(n, a(), b(m)));
-
-// Написать функцию, которая принимает 3 аргумента(каждый аргумент - 1 слово) и возвращает строку с этими 3 словами, расположенными в алфавитном порядке.
-let word = " ";
-let a = "Вася";
-let b = "Анатой";
-let c = "Ярослав";
-let str = function (word1, word2, word3) {
-  if (word1 > word2 && word2 > word3) {
-    return (word = word3 + " " + word2 + " " + word1);
-  } else if (word2 > word3 && word3 > word1) {
-    return (word = word1 + " " + word3 + " " + word2);
-  } else if (word2 > word1 && word1 > word3) {
-    return (word = word3 + " " + word1 + " " + word2);
-  } else if (word2 > word3 && word3 > word1) {
-    return (word = word1 + " " + word3 + " " + word2);
-  } else if (word3 > word1 && word1 > word2) {
-    return (word = word2 + " " + word1 + " " + word3);
-  } else if (word3 > word2 && word2 > word1) {
-    return (word = word1 + " " + word2 + " " + word3);
-  } else {
-    return console.log("Ошибка");
-  }
-};
-
-console.log(str(a, b, c));
+// n.description = "123";
+// console.log(n);
