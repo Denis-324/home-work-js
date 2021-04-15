@@ -1,131 +1,143 @@
-// 1. Удаление указанного количества символов из строки
-// Напишите функцию delete_characters(str, length), которая возвращает подстроку, состоящую из указанного количества символов.
+// Используя метод map() напишите код, который получает из массива строк новый массив, содержащий их длины.
 
-// let str = "Каждый охотник желает знать";
-// let length = 5;
-// function delete_characters(str, length) {
-//   return str.slice(0, length + 1);
-// }
-// console.log(delete_characters(str, length));
+// let vegetables = ["Капуста", "Репа", "Редиска", "Морковка"];
+// let vegetableLength = vegetables.map((el) => el.length);
+// console.log(vegetableLength);
 
-// 2. Вставить тире между словами строки
-// Напишите функцию insert_dash(str), которая принимает строку str в качестве аргумента и вставляет тире (-) между словами. При этом все символы строки необходимо перевести в верхний регистр.
+// Имеется массив простых чисел: numbers = [2, 3, 5, 7, 11, 13, 17, 19]. Использую метод reduce() напишите функцию currentSums(numbers), которая возвращает новый массив из такого же числа элементов, в котором на каждой позиции будет находиться сумма элементов массива numbers до этой позиции включительно.
 
-// let str = "HTML JavaScript PHP";
-// function insert_dash(str) {
-//   let find = " ";
-//   let replace = "-";
-//   let pos = 0;
-//   while (str.includes(find)) {
-//     pos = str.indexOf(find, pos);
-//     str = (
-//       str.slice(0, pos) +
-//       replace +
-//       str.slice(pos + find.length)
-//     ).toUpperCase();
+// let numbers = [2, 3, 5, 7, 11, 13, 17];
+// let currentSums = (numbers) => {
+//   let result = [];
+//   numbers.reduce((sum, current, i) => (result[i] = sum + current), 0);
+//   return result;
+// };
+// console.log(currentSums(numbers));
+
+// Перед вами переменная, содержащая строку. Напишите код, создащий массив, который будет состоять из первых букв слов строки str.
+// let str = "Каждый охотник желает знать, где сидит фазан.";
+// let arr = (str) => {
+//   let array = str.split(" ");
+//   let arr2 = [];
+//   for (i = 0; i < array.length; i++) {
+//     arr2.push(array[i][0]);
 //   }
-//   return str;
-// }
+//   return arr2;
+// };
+// console.log(arr(str));
 
-// console.log(insert_dash(str));
+// Напишите код, преобразующий массив цифр, которые располагаются неупорядоченно, в массив цифр расположенных по убыванию их значений.
+// let numerics = [5, 7, 2, 9, 3, 1, 8];
+// numerics.sort((a, b) => b - a);
+// console.log(numerics);
 
-// 3. Сделать первую букву строки прописной
-// Напишите функцию, которая принимает строку в качестве аргумента и преобразует регистр первого символа строки из нижнего регистра в верхний.
+// Напишите код, объединяющий три массива цифр, и располагающий цифры, в полученном массиве, в порядке убывания их значений.
+// let a = [1, 2, 3];
+// let b = [4, 5, 6];
+// let c = [7, 8, 9];
+// let getArr = (a, b, c) => {
+//   let d = [...a, ...b, ...c];
+//   d.sort((a, b) => b - a);
+//   return d;
+// };
+// console.log(getArr(a, b, c));
 
-// let str = "string not starting with capital";
-// function cursive_letter(str) {
-//   return str[0].toUpperCase() + str.slice(1);
-// }
-// console.log(cursive_letter(str));
+// Дан двухмерный массив с числами, например [[1, 2, 3], [4, 5], [6]]. Найдите сумму элементов этого массива. Массив, конечно же, может быть произвольным. Показать решение.
+// let arr = [[1, 2, 3], [4, 5], [6]];
+// let result = [].concat(...arr).reduce((i, j) => i + j);
+// console.log(result);
 
-// 5. Смена регистра символов строки
-// Напишите функцию change_register(str), которая принимает в качестве аргумента строку и и заменяет регистр каждого символа на противоположный. Например, если вводится «КаЖдЫй ОхОтНиК», то на выходе должно быть «кАжДыЙ оХоТнИк».
+// Дан трехмерный массив с числами, например [[[1, 2], [3, 4]], [[5, 6], [7, 8]]]. Найдите сумму элементов этого массива. Массив, конечно же, может быть произвольным.
 
-// let str = "КаЖдЫй ОхОтНиК жЕлАеТ зНаТь";
+// let arr = [
+//   [
+//     [1, 2],
+//     [3, 4],
+//   ],
+//   [
+//     [5, 6],
+//     [7, 8],
+//   ],
+// ];
+// let result = [].concat(...arr);
+// let result2 = [].concat(...result).reduce((i, j) => i + j);
+// console.log(result2);
 
-// function change_register(str) {
-//   let str2 = "";
-//   for (let i = 0; i < str.length; i++) {
-//     if (str[i] === str[i].toLowerCase()) {
-//       str2 += str[i].toUpperCase();
-//     } else {
-//       str2 += str[i].toLowerCase();
+// Дан массив с числами. Не используя метода reverse переверните его элементы в обратном порядке.
+// let numerics = [1, 2, 3, 4, 5, 6, 7];
+// numerics.sort((a, b) => b - a);
+// console.log(numerics);
+
+// Сделайте функцию arrayFill, которая будет заполнять массив заданными значениями. Первым параметром функция принимает значение, которым заполнять массив, а вторым - сколько элементов должно быть в массиве. Пример: arrayFill('x', 5) сделает массив ['x', 'x', 'x', 'x', 'x'].
+
+// let arrayFill = (value, length) => {
+//   let arr = [];
+//   for (let i = 0; i < length; i++) {
+//     arr.push(value);
+//   }
+//   return arr;
+// };
+// console.log(arrayFill("x", 5));
+
+// Создайте объект и скопируйте данный объект с помощью: Object.assign() и spread оператора. Изменить любое свойство в копии объекта, и проверить не изменился ли исходный.
+
+// let obj = { a: 1 };
+
+// let copy = Object.assign({}, obj);
+// copy.b = 2;
+
+// let copy2 = { ...obj };
+// copy2.c = 3;
+
+// console.log(obj, copy, copy2);
+
+// Создайте функцию, которая принимает 1 аргумент - объект пользователя user со свойствами name, age, city. Функция должна возвращать новый объект пользователя с измененным полем name, при этом оригинальный объект user должен остаться неизменным.
+
+// let user = {
+//   name: "Иван",
+//   age: "30",
+//   city: "Москва",
+// };
+// let objCopy = (user) => {
+//   let userCopy = { ...user };
+//   userCopy.name = "Василий";
+//   return userCopy;
+// };
+
+// console.log(objCopy(user));
+
+// Дан массив с числами. Запишите в новый массив только те числа, которые больше нуля и меньше 10-ти. Для этого используйте вспомогательную функцию isNumberInRange из предыдущей задачи( Сделайте функцию isNumberInRange, которая параметром принимает число и проверяет, что оно больше нуля и меньше 10. Если это так - пусть функция возвращает true, если не так - false.).
+
+// почему то в этой задачи функция добавляет нете значения в массив
+// let isNumberInRange = (a) => {
+//   if (a > 0 && a < 10) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
+
+// let arr = [1, 2, 3, 4, 13];
+// let arr2 = [];
+// let isNamb = () => {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (isNumberInRange(i)) {
+//       arr2.push(arr[i]);
 //     }
 //   }
-//   return str2;
-// }
-// console.log(change_register(str));
+//   return arr2;
+// };
+// console.log(isNamb());
 
-// 23. Найти слово в строке
-// Напишите функцию findWord(word, str), которая проверяет, существует ли в строке str слова word.
+// Сделайте функцию getDigitsSum (digit - это цифра), которая параметром принимает целое число и возвращает сумму его цифр.
 
-// let str = "abc def ghi jkl mno pqr stu";
-// let word = "abc";
-
-// function findWord(word, str) {
-//   if (str.includes(word)) {
-//     return `слово есть в строке ${str}`;
-//   } else {
-//     return `слова нет в строке ${str}`;
+// let getDigitsSum = (digit) => {
+//   let result = 0;
+//   let n = digit;
+//   let arr = n.toString().split("");
+//   for (i = 0; i < arr.length; i++) {
+//     result += +arr[i];
 //   }
-// }
-// console.log(findWord(word, str));
-
-// 21. Удалить лишние слова из строки
-// Напишите функцию cutString(str, n), которая удаляет лишние слова из строки str, оставив в ней n слов.
-
-// let str = "Сила тяжести приложена к центру масс тела";
-
-// function cutString(str, n) {
-//   n = "Сила";
-//   if (str.includes(n)) {
-//     return n;
-//   } else {
-//     return `слова ${n} нет в строке`;
-//   }
-// }
-// console.log(cutString(str));
-
-// 12. Повторить строку n раз
-// Напишите функцию repeatStr(str, n), которая вовращает строку повторяемую определённое количество раз.
-// let str = "Привет";
-// let str2 = " ";
-// let n = 3;
-// function repeatStr(str, n) {
-//   while (n > 0) {
-//     str2 += str;
-//     n--;
-//   }
-//   return str2;
-// }
-
-// console.log(repeatStr(str, n));
-
-// 8. Сравнение строк без учёта регистра
-// Напишите функцию comparison(str1, str2), которая сравнивает строки без учёта регистра символов.
-// function comparison(str1, str2) {
-//   let result = str1.toUpperCase() === str2.toUpperCase();
 //   return result;
-// }
-// console.log(comparison("Ваня", "Ваня"));
-
-// 25. Реализовать объект
-
-// Создать объект с начальным полем title. Добавить поле с ключом description начальным значением строкой. Добавить метод addField, который при вызове добавляет новое поле в объект с переданным именем и значением addField(fieldName, value), добавить метод editField(fieldName, value), который меняет указанное свойство объекта. Добавить метод удаление свойства deleteField(fieldName), удаляющий указанное поле. Добавить и изменить поля с помощью этих методов.
-
-// let n = {
-//   title: "title",
 // };
-
-// n.addField = (fieldName, value) => {
-//   return (n.fieldName = "value");
-// };
-// n.ditField = (fieldName, value) => {
-//   return (n.fieldName = "value");
-// };
-// n.deleteField = (fieldName) => {
-//   return delete n.fieldName;
-// };
-
-// n.description = "123";
-// console.log(n);
+// console.log(getDigitsSum(123));
