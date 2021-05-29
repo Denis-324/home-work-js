@@ -13,7 +13,7 @@ let clickBtn = function () {
   list.append(liClone);
   input.value = "";
   listText.classList.remove("actives");
-  listText.classList.remove("active");
+  listCrosse.classList.remove("actives");
 };
 
 btn.addEventListener("click", clickBtn);
