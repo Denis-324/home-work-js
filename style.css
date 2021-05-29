@@ -49,10 +49,21 @@ body {
   display: flex;
   justify-content: space-between;
 }
+li {
+  display: block;
+}
+
 .list-text {
+  display: inline-block;
+}
+.list-text.active {
+  text-decoration: line-through;
+}
+.list-text.actives {
+  display: none;
 }
 .list-text::before {
-  display: inline-block;
+  display: none;
   content: "";
   width: 7px;
   height: 7px;
@@ -61,5 +72,13 @@ body {
   margin-right: 5px;
   margin-bottom: 1px;
 }
+
+.list-text.active::before {
+  display: inline-block;
+}
+
 .list-crosse {
+}
+.list-crosse.actives {
+  display: none;
 }
