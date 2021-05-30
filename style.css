@@ -56,3 +56,7 @@ body {
   list-style: none;
   margin-left: 10px;
 }
+
+.active {
+  text-decoration: line-through;
+}

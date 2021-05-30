@@ -11,12 +11,10 @@ let clickBtn = function (evt) {
   let btnCheck = document.createElement("button");
   btnCheck.classList.add("btn-check");
   btnCheck.textContent = "V";
-  // listDiv.prepend(btnCheck);
 
   let listItem = document.createElement("li");
   listItem.classList.add("list-item");
-  listItem.textContent = "Дела";
-  // listDiv.appendChild(listItem);
+  listItem.textContent = input.value;
 
   listDivBlock = document.createElement("div");
   listDivBlock.classList.add("list-div-blok");
@@ -30,6 +28,23 @@ let clickBtn = function (evt) {
   listDiv.appendChild(btnClose);
 
   list.appendChild(listDiv);
+
+  input.value = "";
 };
 
 btn.addEventListener("click", clickBtn);
+
+let deliteList = function (evt) {
+  const item = evt.target;
+  if (item.classList[0] === "btn-close") {
+    let todo = item.parentElement;
+    todo.remove();
+  }
+
+  if (item.classList[0] === "btn-check") {
+    let todo = item.parentElement;
+    todo.classList.toggle("active");
+  }
+};
+
+list.addEventListener("click", deliteList);
