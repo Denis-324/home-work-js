@@ -1,32 +1,29 @@
-let container = document.querySelector(".container");
-let form = document.querySelector(".form");
 let input = document.querySelector(".input");
 let btn = document.querySelector(".btn");
 let list = document.querySelector(".list");
-let li = document.querySelector("li");
-let listText = document.querySelector(".list-text");
-let listCrosse = document.querySelector(".list-crosse");
 
-let clickBtn = function () {
-  let liClone = li.cloneNode(true);
-  liClone.querySelector(".list-text").innerHTML = input.value;
-  list.append(liClone);
-  input.value = "";
-  listText.classList.remove("actives");
-  listCrosse.classList.remove("actives");
+let clickBtn = function (evt) {
+  evt.preventDefault();
+
+  let listDiv = document.createElement("div");
+  listDiv.classList.add("list-div");
+
+  let listItem = document.createElement("li");
+  listItem.classList.add("list-item");
+  listItem.textContent = "Дела";
+  listDiv.appendChild(listItem);
+
+  let btnClose = document.createElement("button");
+  btnClose.classList.add("btn-close");
+  btnClose.textContent = "X";
+  listDiv.appendChild(btnClose);
+
+  let btnCheck = document.createElement("button");
+  btnCheck.classList.add("btn-check");
+  btnCheck.textContent = "V";
+  listDiv.prepend(btnCheck);
+
+  list.appendChild(listDiv);
 };
 
 btn.addEventListener("click", clickBtn);
-
-let clicklistCrosse = function () {
-  listText.classList.add("actives");
-  listCrosse.classList.add("actives");
-};
-
-listCrosse.addEventListener("click", clicklistCrosse);
-
-// let clicklistText = function () {
-//   listText.classList.toggle("active");
-// };
-
-// li.addEventListener("click", clicklistText);
