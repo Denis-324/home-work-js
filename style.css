@@ -43,15 +43,16 @@ body {
   padding: 0 20px;
   margin: 0 auto;
 }
-.list {
-}
-.list li {
+.list-div {
   display: flex;
   justify-content: space-between;
 }
 
-.list-text {
- 
+.list-div-blok {
+  display: flex;
 }
-.list-crosse {
+
+.list-item {
+  list-style: none;
+  margin-left: 10px;
 }

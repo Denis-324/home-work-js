@@ -8,20 +8,26 @@ let clickBtn = function (evt) {
   let listDiv = document.createElement("div");
   listDiv.classList.add("list-div");
 
+  let btnCheck = document.createElement("button");
+  btnCheck.classList.add("btn-check");
+  btnCheck.textContent = "V";
+  // listDiv.prepend(btnCheck);
+
   let listItem = document.createElement("li");
   listItem.classList.add("list-item");
   listItem.textContent = "Дела";
-  listDiv.appendChild(listItem);
+  // listDiv.appendChild(listItem);
+
+  listDivBlock = document.createElement("div");
+  listDivBlock.classList.add("list-div-blok");
+  listDiv.append(listDivBlock);
+  listDivBlock.append(btnCheck);
+  listDivBlock.append(listItem);
 
   let btnClose = document.createElement("button");
   btnClose.classList.add("btn-close");
   btnClose.textContent = "X";
   listDiv.appendChild(btnClose);
-
-  let btnCheck = document.createElement("button");
-  btnCheck.classList.add("btn-check");
-  btnCheck.textContent = "V";
-  listDiv.prepend(btnCheck);
 
   list.appendChild(listDiv);
 };
